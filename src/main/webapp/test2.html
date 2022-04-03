@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_Canvas_triangle_and_circle
+  File name(文件名): test2
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/3
+  Time(创建时间)： 13:26
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border: 3px solid hotpink;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400">
+    浏览器不支持画布功能
+</canvas>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "yellow";
+
+    ctx.beginPath();
+    //x – 圆弧中心的水平坐标。
+    //y - 圆弧中心的垂直坐标。
+    // radius – 弧的半径。必须是积极的。
+    // startAngle – 弧以弧度开始的角度，从正 x 轴测量。
+    // endAngle – 弧以弧度结束的角度，从正 x 轴测量。
+    // counterclockwise - 一个可选的布尔值。如果为true ，则在开始角和结束角之间逆时针绘制圆弧。默认为false （顺时针）。
+    ctx.arc(150, 100, 80, 0, Math.PI * 2, true);
+    //stroke()方法使用当前笔触样式笔触（轮廓）当前或给定路径。
+    ctx.stroke();
+    //在用值填充由 start 和 end 标识的部分后返回 this 对象
+    ctx.fill();
+
+    ctx.fillStyle = "black";
+
+    //填充黑色的左眼
+    ctx.beginPath();
+    ctx.arc(110, 80, 10, 0, Math.PI * 2, true);
+    ctx.fill();
+
+    //填充黑色的右眼
+    ctx.beginPath();
+    ctx.arc(190, 80, 10, 0, Math.PI * 2, true);
+    ctx.fill();
+
+    //绘制带有弧度的笑容
+    ctx.beginPath();
+    ctx.arc(150, 110, 50, 0, Math.PI, false);
+    ctx.stroke();
+</script>
+
+</body>
+</html>
